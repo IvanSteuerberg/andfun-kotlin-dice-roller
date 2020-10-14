@@ -23,21 +23,30 @@ import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
-
+//Cargamos la imagen
     lateinit var diceImage: ImageView
 
+    //Sobreescribimos la funcion onCreate
     override fun onCreate(savedInstanceState: Bundle?) {
+        //Cargamos el constructor
         super.onCreate(savedInstanceState)
+
+        //Cargamos el layout
         setContentView(R.layout.activity_main)
 
+        //Esta es la variable del botón
         val rollButton: Button = findViewById(R.id.roll_button)
+
+        //Método que lanza rollDice() al hacer click en el botón
         rollButton.setOnClickListener {
             rollDice()
         }
 
+        //Busca la vista por el id (en este caso es dice_image)
         diceImage = findViewById(R.id.dice_image)
     }
 
+    //Función rollDice, la variable randomInt es un numero aleatorio del 1 al 6 y en un switch, en cada caso realiza una acción.
     private fun rollDice() {
         val randomInt = Random().nextInt(6) + 1
         val drawableResource = when (randomInt) {
@@ -49,6 +58,7 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.dice_6
         }
 
+        //Estas son las imagenes que cargaremos en cada caso
         diceImage.setImageResource(drawableResource)
     }
 }
