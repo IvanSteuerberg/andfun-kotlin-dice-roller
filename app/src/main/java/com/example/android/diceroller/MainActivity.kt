@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //Esta es la variable del botón
-        val rollButton: Button = findViewById(R.id.roll_button)
+        val rollButton: Button = findViewById(R.id.boton)
 
         //Método que lanza rollDice() al hacer click en el botón
         rollButton.setOnClickListener {
