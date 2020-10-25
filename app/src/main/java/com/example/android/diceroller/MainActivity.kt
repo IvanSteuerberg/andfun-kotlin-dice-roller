@@ -48,14 +48,16 @@ class MainActivity : AppCompatActivity() {
 
     //Función rollDice, la variable randomInt es un numero aleatorio del 1 al 6 y en un switch, en cada caso realiza una acción.
     private fun rollDice() {
-        val randomInt = Random().nextInt(6) + 1
+        val randomInt = Random().nextInt(7) + 1
         val drawableResource = when (randomInt) {
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
             3 -> R.drawable.dice_3
             4 -> R.drawable.dice_4
             5 -> R.drawable.dice_5
-            else -> R.drawable.dice_6
+            6 -> R.drawable.dice_6
+            else -> R.drawable.dice_7
+        //Añadi un dado extra con 7 caras y colores diferentes
         }
 
         //Estas son las imagenes que cargaremos en cada caso
