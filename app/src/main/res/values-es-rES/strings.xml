@@ -2,4 +2,5 @@
 <resources>
         <string name="app_name">Dado</string>
         <string name="roll">Lanzar</string>
+        <string name="saludo">Dado lanzado!</string>
 </resources>

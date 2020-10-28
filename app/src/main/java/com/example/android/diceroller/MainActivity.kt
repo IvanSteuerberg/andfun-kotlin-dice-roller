@@ -19,12 +19,16 @@ package com.example.android.diceroller
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
 //Cargamos la imagen
     lateinit var diceImage: ImageView
+
+    val duration = Toast.LENGTH_SHORT
+
 
     //Sobreescribimos la funcion onCreate
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,10 +40,13 @@ class MainActivity : AppCompatActivity() {
 
         //Esta es la variable del botón
         val rollButton: Button = findViewById(R.id.boton)
+        val text = getString(R.string.saludo)
+        val toast = Toast.makeText(applicationContext, text, duration)
 
         //Método que lanza rollDice() al hacer click en el botón
         rollButton.setOnClickListener {
             rollDice()
+            toast.show()
         }
 
         //Busca la vista por el id (en este caso es dice_image)
